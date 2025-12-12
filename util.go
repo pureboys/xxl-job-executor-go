@@ -10,10 +10,11 @@ func Int64ToStr(i int64) string {
 	return strconv.FormatInt(i, 10)
 }
 
-//执行任务回调
+// 执行任务回调
 func returnCall(req *RunReq, code int64, msg string) []byte {
 	data := call{
 		&callElement{
+			JobId:      req.JobID,
 			LogID:      req.LogID,
 			LogDateTim: req.LogDateTime,
 			ExecuteResult: &ExecuteResult{
@@ -28,7 +29,7 @@ func returnCall(req *RunReq, code int64, msg string) []byte {
 	return str
 }
 
-//杀死任务返回
+// 杀死任务返回
 func returnKill(req *killReq, code int64) []byte {
 	msg := ""
 	if code != SuccessCode {
@@ -42,7 +43,7 @@ func returnKill(req *killReq, code int64) []byte {
 	return str
 }
 
-//忙碌返回
+// 忙碌返回
 func returnIdleBeat(code int64) []byte {
 	msg := ""
 	if code != SuccessCode {
@@ -56,7 +57,7 @@ func returnIdleBeat(code int64) []byte {
 	return str
 }
 
-//通用返回
+// 通用返回
 func returnGeneral() []byte {
 	data := &res{
 		Code: SuccessCode,
