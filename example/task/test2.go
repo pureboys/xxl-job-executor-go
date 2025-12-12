@@ -3,8 +3,9 @@ package task
 import (
 	"context"
 	"fmt"
-	xxl "github.com/xxl-job/xxl-job-executor-go"
 	"time"
+
+	xxl "github.com/pureboys/xxl-job-executor-go"
 )
 
 func Test2(cxt context.Context, param *xxl.RunReq) (msg string) {

@@ -3,9 +3,10 @@ package main
 import (
 	"context"
 	"fmt"
-	xxl "github.com/xxl-job/xxl-job-executor-go"
-	"github.com/xxl-job/xxl-job-executor-go/example/task"
 	"log"
+
+	xxl "github.com/pureboys/xxl-job-executor-go"
+	"github.com/pureboys/xxl-job-executor-go/example/task"
 )
 
 func main() {
